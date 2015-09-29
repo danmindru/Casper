@@ -1,13 +1,24 @@
 <div class="nav">
-    <h3 class="nav-title">Menu</h3>
+    <h3 class="nav-title">More</h3>
     <a href="#" class="nav-close">
         <span class="hidden">Close</span>
     </a>
+
+    {{!--
     <ul>
         {{#foreach navigation}}
             <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
         {{/foreach}}
     </ul>
+    --}}
+
+    <ul>
+      <li role="presentation"><a href="https://github.com/ng-milk">ngmilk on Github</a></li>
+      <li role="presentation"><a href="http://twitter.com/ngmilkrocks">@ngmilkrocks</a></li>
+      <li role="presentation"><a href="http://twitter.com/mindrudan">@mindrudan</a></li>
+      <li role="presentation"><a href="http://mindrudan.com">mindrudan.com</a></li>
+    </ul>
+
     <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
 </div>
 <span class="nav-cover"></span>

@@ -44,7 +44,7 @@ a:focus { outline: thin dotted; }
 a:active, a:hover { outline: 0; }
 h1 { font-size: 2em; margin: 0.67em 0; }
 abbr[title] { border-bottom: 1px dotted; }
-b, strong { font-weight: 700; }
+b, strong { font-weight: 300; }
 dfn { font-style: italic; }
 hr {
    -moz-box-sizing: content-box;
@@ -214,12 +214,13 @@ h4, h5, h6 {
     margin: 0 0 0.4em 0;
     font-family: "Open Sans", sans-serif;
     text-rendering: geometricPrecision;
+    font-weight: 400;
 }
 
 h1 {
-    font-size: 5rem;
-    letter-spacing: -2px;
-    text-indent: -3px;
+    font-size: 4.3rem;
+    letter-spacing: 0px;
+    text-indent: 0px;
 }
 
 h2 {
@@ -244,12 +245,26 @@ h6 {
 }
 
 a {
-    color: #4A4A4A;
-    transition: color 0.3s ease;
+    color: #055AAB;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position:relative;
+}
+
+a:after{
+  transition: all 0.3s ease;
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: -8px;
+  background-color: rgba(255,255,255, 0);
+  left: 0;
 }
 
 a:hover {
-    color: #111;
+    color: #0977E0;
+    text-decoration: none;
 }
 
 p, ul, ol, dl {
@@ -278,7 +293,7 @@ dl dt {
     text-align: right;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-weight: 700;
+    font-weight: 300;
     margin-bottom: 1em;
 }
 
@@ -309,7 +324,9 @@ blockquote {
     box-sizing: border-box;
     margin: 1.75em 0 1.75em -2.2em;
     padding: 0 0 0 1.75em;
-    border-left: #4A4A4A 0.4em solid;
+    border-left: #055AAB 0.4em solid;
+    background-color: rgba(232, 244, 255, 0.6);
+    padding: 1em 1.75em;
 }
 
 blockquote p {
@@ -327,7 +344,7 @@ blockquote small {
 blockquote small:before { content: "\2014 \00A0"; }
 
 blockquote cite {
-    font-weight: 700;
+    font-weight: 300;
 }
 
 blockquote cite a { font-weight: normal; }
@@ -377,7 +394,7 @@ kbd {
     color: #666;
     text-shadow: #FFF 0 1px 0;
     font-size: 0.9em;
-    font-weight: 700;
+    font-weight: 300;
     background: #F4F4F4;
     border-radius: 4px;
     box-shadow:
@@ -431,12 +448,19 @@ table.plain tbody > tr:nth-child(odd) > th {
 iframe, .fluid-width-video-wrapper {
     display: block;
     margin: 1.75em 0;
+    max-height:350px;
+}
+
+.fluid-width-video-wrapper{
+  padding-top: 350px!important;
 }
 
 /* When a video is inside the fitvids wrapper, drop the
 margin on the iframe, cause it breaks stuff. */
 .fluid-width-video-wrapper iframe {
     margin: 0;
+    max-height: 350px;
+    border: 1px solid #EAEAEA;
 }
 
 
@@ -509,6 +533,7 @@ body.nav-opened .site-wrapper {
     background: #222 no-repeat center center;
     background-size: cover;
     overflow: hidden;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .main-header .inner {
@@ -767,8 +792,11 @@ body.nav-opened .nav {
 .blog-logo {
     display: block;
     float: left;
-    background: none !important; /* Makes sure there is never a background */
-    border: none !important; /* Makes sure there is never a border */
+    border-radius: 50%;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5)!important;
 }
 
 .blog-logo img {
@@ -776,9 +804,13 @@ body.nav-opened .nav {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    height: 38px;
-    padding: 1px 0 5px 0;
+    height: 100%;
+    padding: 0;
     width: auto;
+    max-height: 100%;
+    text-align: center;
+    position: relative;
+    left: -16px;
 }
 
 .menu-button {
@@ -869,7 +901,7 @@ body.nav-opened .nav {
     margin: 10px 0 10px 0;
     font-size: 5rem;
     letter-spacing: -1px;
-    font-weight: 700;
+    font-weight: 300;
     font-family: "Open Sans", sans-serif;
     color: #fff;
 }
@@ -917,7 +949,7 @@ body.nav-opened .nav {
     position: relative;
     width: 80%;
     max-width: 710px;
-    margin: 4rem auto;
+    margin: 8rem auto;
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
@@ -1008,7 +1040,7 @@ body:not(.post-template) .post-title {
 
 .user-name {
     display: block;
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .user-bio {
@@ -1028,7 +1060,7 @@ body:not(.post-template) .post-title {
 
 .publish-heading {
     display: block;
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .publish-date {
@@ -1047,7 +1079,7 @@ body:not(.post-template) .post-title {
 }
 
 .post-template .post-title {
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .post-template .post-meta {
@@ -1095,6 +1127,26 @@ body:not(.post-template) .post-title {
     -webkit-transform: translateX(-50%); /* for Safari and iOS */
     -ms-transform: translateX(-50%); /* for IE9 */
     transform: translateX(-50%);
+}
+
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6{
+  margin-top: 30px;
+}
+
+.post-content pre[class*="language-"]{
+  margin-bottom: 30px;
+}
+
+.post-content a:hover:after{
+  transition: all 0.3s ease;
+  background-color: #0977E0;
+  bottom:-2px;
 }
 
 .footnotes {
@@ -1176,6 +1228,7 @@ body:not(.post-template) .post-title {
     top: 6rem;
     right: 0;
     width: 140px;
+    text-align: right;
 }
 
 .post-footer .share a {
@@ -1568,9 +1621,10 @@ body:not(.post-template) .post-title {
    ========================================================================== */
 
 .site-footer {
-    position: relative;
-    margin: 8rem 0 0 0;
-    padding: 1rem 15px;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    padding: 0rem 15px;
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     line-height: 1.75em;
@@ -1596,7 +1650,7 @@ body:not(.post-template) .post-title {
 
 .copyright {
     display: block;
-    width: 45%;
+    width: 100%;
     float: left;
 }
 
@@ -1627,10 +1681,6 @@ body:not(.post-template) .post-title {
     .archive-template .main-header {
         min-height: 180px;
         padding: 10% 0;
-    }
-
-    .blog-logo img {
-        padding: 4px 0;
     }
 
     .page-title {
@@ -1763,14 +1813,6 @@ body:not(.post-template) .post-title {
     .main-nav {
         padding: 5px;
         margin-bottom: 2rem;
-    }
-
-    .blog-logo {
-        padding: 5px;
-    }
-
-    .blog-logo img {
-        height: 30px;
     }
 
     .menu-button {
@@ -2000,6 +2042,16 @@ body:not(.post-template) .post-title {
     }
 
 }
+
+/* New stuff */
+.main-page-loop a{
+  color: #151515;
+}
+
+.main-page-loop a:hover{
+  color: #777777;
+}
+
 
 
 /* ==========================================================================
