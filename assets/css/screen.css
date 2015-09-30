@@ -2058,6 +2058,9 @@ body:not(.post-template) .post-title {
   color: #777777;
 }
 
+#disqus_thread iframe{
+  max-height: none;
+}
 
 
 /* ==========================================================================
