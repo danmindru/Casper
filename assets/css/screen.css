@@ -2062,6 +2062,11 @@ body:not(.post-template) .post-title {
   max-height: none;
 }
 
+[id*="dsq"]{
+  margin:0!important;
+  max-height: none!important;
+}
+
 
 /* ==========================================================================
    13. Animations
